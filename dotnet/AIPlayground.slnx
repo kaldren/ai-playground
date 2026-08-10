@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="src/FoundryToolbox/FoundryToolbox.csproj" Id="dc393c95-d83e-4726-a97f-ffcad3ba75b7" />
   <Project Path="src/McpBasedSkill/McpBasedSkill.csproj" Id="acf4325a-4a1c-48a2-b92d-dc1090a58e5d" />
 </Solution>

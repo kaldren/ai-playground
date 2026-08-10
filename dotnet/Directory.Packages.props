@@ -1,0 +1,15 @@
+<Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Azure.Identity" Version="1.21.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
+    <PackageVersion Include="ModelContextProtocol" Version="1.2.0" />
+    <PackageVersion Include="Microsoft.Agents.AI.Mcp" Version="1.17.0-alpha.260804.1" />
+    <PackageVersion Include="Microsoft.Agents.AI.Foundry" Version="1.17.0-preview.260804.1" />
+  </ItemGroup>
+
+</Project>

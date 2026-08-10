@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.21.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
-    <PackageReference Include="ModelContextProtocol" Version="1.2.0" />
-    <PackageReference Include="Microsoft.Agents.AI.Mcp" Version="1.17.0-alpha.260804.1" />
-    <PackageReference Include="Microsoft.Agents.AI.Foundry" Version="1.17.0-preview.260804.1" />
+    <PackageReference Include="Azure.Identity" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="ModelContextProtocol" />
+    <PackageReference Include="Microsoft.Agents.AI.Mcp" />
+    <PackageReference Include="Microsoft.Agents.AI.Foundry" />
   </ItemGroup>
 
 </Project>
