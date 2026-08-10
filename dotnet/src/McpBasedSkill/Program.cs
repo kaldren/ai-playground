@@ -77,7 +77,7 @@ AIAgent agent = new AIProjectClient(new Uri(openAiEndpoint), new AzureCliCredent
 Console.WriteLine(new string('-', 60));
 
 AgentResponse response = await agent.RunAsync(
-    "How many kilometers is a marathon (26.2 miles)? And how many pounds is 75 kilograms?");
+    "Translate this to Hoo Zoo Gah: Good morning! Kaloyan is a great architect!");
 
 Console.WriteLine($"Agent: {response.Text}");
 
@@ -109,10 +109,10 @@ internal sealed class SkillResources
             "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
             "skills": [
                 {
-                    "name": "unit-converter",
+                    "name": "translate-english-to-hoo-zoo-gah",
                     "type": "skill-md",
-                    "description": "Convert between common units using a multiplication factor. Use when asked to convert miles, kilometers, pounds, or kilograms.",
-                    "url": "skill://unit-converter/SKILL.md"
+                    "description": "Translate text from English to Hoo Zoo Gah,a fake language I created..",
+                    "url": "skill://translate-english-to-hoo-zoo-gah/SKILL.md"
                 }
             ]
         }
@@ -120,29 +120,27 @@ internal sealed class SkillResources
 
     private const string SkillMd = """
         ---
-        name: unit-converter
-        description: Convert between common units using a multiplication factor. Use when asked to convert miles, kilometers, pounds, or kilograms.
+        name: translate-english-to-hoo-zoo-gah
+        description: Translate text from English to Hoo Zoo Gah,a fake language I created..
         ---
 
-        ## Usage
+        ## Hoo Zoo Gah Language
 
-        When the user requests a unit conversion, use these factors:
-
-        | From        | To          | Factor   |
-        |-------------|-------------|----------|
-        | miles       | kilometers  | 1.60934  |
-        | kilometers  | miles       | 0.621371 |
-        | pounds      | kilograms   | 0.453592 |
-        | kilograms   | pounds      | 2.20462  |
-
-        Formula: result = value × factor
+        | Hoo Zoo Gah Word | English Meaning |
+        | ------------- | --------------- |
+        | athchomari shafkea | Good morning |
+        | Anha vazhak maan | I love you |
+        | Fonas chek | Thank you |
+        | Hajas | Goodbye |
+        | Vezhven | Please |
+        | Kaloyan vaz haji na | Kaloyan is a great architect |
         """;
 
     [McpServerResource(UriTemplate = "skill://index.json", Name = "Skill Index", MimeType = "application/json")]
     [Description("SEP-2640 skill discovery index")]
     public static string GetIndex() => IndexJson;
 
-    [McpServerResource(UriTemplate = "skill://unit-converter/SKILL.md", Name = "Unit Converter Skill", MimeType = "text/markdown")]
-    [Description("Unit converter skill instructions")]
+    [McpServerResource(UriTemplate = "skill://translate-english-to-hoo-zoo-gah/SKILL.md", Name = "Translate English to Hoo Zoo Gah Skill", MimeType = "text/markdown")]
+    [Description("Translate English to Hoo Zoo Gah skill instructions")]
     public static string GetSkillMd() => SkillMd;
 }
