@@ -1,9 +1,9 @@
 // This sample demonstrates how to discover Agent Skills served over MCP.
 //
 // When launched with "--server", this executable runs a small MCP stdio server
-// that exposes a unit-converter skill via the SEP-2640 convention:
+// that exposes a translate-english-to-hoo-zoo-gah skill via the SEP-2640 convention:
 //   - skill://index.json      — discovery document listing all skills
-//   - skill://unit-converter/SKILL.md — the skill instructions
+//   - skill://translate-english-to-hoo-zoo-gah/SKILL.md — the skill instructions
 //
 // In default (client) mode the sample launches itself as a child process,
 // connects via StdioClientTransport, and uses AgentSkillsProviderBuilder
@@ -48,9 +48,6 @@ var skillsProvider = new AgentSkillsProviderBuilder()
     .Build();
 
 // --- Agent ---
-// WARNING: DefaultAzureCredential is convenient for development but requires careful consideration in production.
-// In production, consider using a specific credential (e.g., ManagedIdentityCredential) to avoid
-// latency issues, unintended credential probing, and potential security risks from fallback mechanisms.
 AIAgent agent = new AIProjectClient(new Uri(openAiEndpoint), new AzureCliCredential())
     .AsAIAgent(new ChatClientAgentOptions
     {
@@ -67,8 +64,7 @@ AIAgent agent = new AIProjectClient(new Uri(openAiEndpoint), new AzureCliCredent
     {
         // NOTE: Auto-approving all skill tools is done here for simplicity in
         // this demonstration. In production, you should prompt the user before
-        // allowing skill tools to execute. See Agent_Step07_SkillsAutoApproval
-        // for a walkthrough of the full approval flow.
+        // allowing skill tools to execute.
         AutoApprovalRules = [AgentSkillsProvider.AllToolsAutoApprovalRule],
     })
     .Build();
