@@ -45,3 +45,13 @@ Stop and remove the dashboard container with:
 ```powershell
 docker compose down
 ```
+
+## Microsoft Learn MCP
+
+`agent_evals_monitoring.py` connects the agent to the remote Microsoft Learn MCP
+server using `MCPStreamableHTTPTool`. Its name and endpoint are configurable with
+`MCP_NAME` and `MCP_URL` in `.env`; the defaults already point to Microsoft Learn.
+
+The MCP connection uses an async context manager so it is opened before the agent
+runs and closed cleanly afterward. Calls to the MCP server are included in the
+OpenTelemetry trace sent to Aspire.

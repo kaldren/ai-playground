@@ -1,6 +1,6 @@
 import os
 
-from agent_framework import Agent
+from agent_framework import Agent, MCPStreamableHTTPTool
 from agent_framework.observability import configure_otel_providers
 from agent_framework_foundry import FoundryChatClient
 from azure.identity import AzureCliCredential
@@ -20,14 +20,24 @@ async def main():
         credential=AzureCliCredential(),
     )
 
-    agent = Agent(
-        client=client,
-        name="HelloAgent",
-        instructions="You are a friendly assistant. Keep your answers brief.",
-    )
+    async with MCPStreamableHTTPTool(
+        name=os.getenv("MCP_NAME", "Microsoft Learn MCP"),
+        url=os.getenv("MCP_URL", "https://learn.microsoft.com/api/mcp"),
+    ) as learn_mcp:
+        agent = Agent(
+            client=client,
+            name="DocsAgent",
+            instructions=(
+                "You are a friendly assistant. Use Microsoft Learn when answering "
+                "questions about Microsoft products, and keep your answers brief."
+            ),
+            tools=[learn_mcp],
+        )
 
-    result = await agent.run("What is the capital of France?")
-    print(f"Agent: {result}")
+        result = await agent.run(
+            "How do I create an Azure storage account using the Azure CLI?"
+        )
+        print(f"Agent: {result}")
 
 
 if __name__ == "__main__":
