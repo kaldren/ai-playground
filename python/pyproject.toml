@@ -1,0 +1,25 @@
+[project]
+name = "examples"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kaloyan Drenski", email = "kaloyan.drenski@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "agent-framework-azure-ai>=1.0.0rc6",
+    "agent-framework-core>=1.17.0",
+    "azure-identity>=1.25.3",
+    "azure-monitor-opentelemetry>=1.8.2",
+    "opentelemetry-api>=1.44.0",
+    "opentelemetry-sdk>=1.44.0",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+examples = "examples:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
