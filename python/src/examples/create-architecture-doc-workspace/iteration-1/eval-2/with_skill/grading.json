@@ -1,0 +1,12 @@
+{
+  "assertion_results": [
+    {"text":"The first non-empty content line contains the company name Google","passed":true,"evidence":"The first non-empty line is 'Google'."},
+    {"text":"The document identifies the project as Next-Gen Search Engine","passed":true,"evidence":"The title is '# Next-Gen Search Engine'."},
+    {"text":"The document has Overview, Architecture, and Implementation sections","passed":true,"evidence":"It contains headings named Overview, Architecture, and Implementation."},
+    {"text":"The output is no longer than 100 lines","passed":true,"evidence":"Mechanical inspection counted 27 lines."},
+    {"text":"The Architecture section contains a fenced Mermaid diagram","passed":true,"evidence":"The Architecture section contains a fenced block beginning with ```mermaid."},
+    {"text":"The architecture is explicitly based on Google Cloud Platform and addresses machine learning, distributed computing, scalability, reliability, and global availability","passed":true,"evidence":"The Overview and Architecture explicitly mention GCP, advanced machine learning, distributed infrastructure, scalability, reliability, and global availability."},
+    {"text":"The document does not present unsupported named Google Cloud services or unprovided stakeholders as confirmed requirements","passed":false,"evidence":"It claims 'search users across supported platforms' are primary stakeholders identified by the brief, but the brief provides no stakeholders."}
+  ],
+  "summary":{"passed":6,"failed":1,"total":7,"pass_rate":0.8571428571428571}
+}

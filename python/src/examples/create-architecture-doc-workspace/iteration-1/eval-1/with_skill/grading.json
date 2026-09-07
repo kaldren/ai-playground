@@ -1,0 +1,12 @@
+{
+  "assertion_results": [
+    {"text":"The first non-empty content line contains the company name Fart Corp","passed":true,"evidence":"The first non-empty line is 'Fart Corp'."},
+    {"text":"The document identifies the project as New Innovative Product","passed":true,"evidence":"The title is '# New Innovative Product'."},
+    {"text":"The document has Overview, Architecture, and Implementation sections","passed":true,"evidence":"It contains headings named Overview, Architecture, and Implementation."},
+    {"text":"The output is no longer than 100 lines","passed":true,"evidence":"Mechanical inspection counted 34 lines."},
+    {"text":"The Architecture section contains a fenced Mermaid diagram","passed":true,"evidence":"The Architecture section contains a fenced block beginning with ```mermaid."},
+    {"text":"The architecture is explicitly based on Microsoft Azure and addresses global availability, scalability, reliability, and security","passed":true,"evidence":"It describes Microsoft Azure deployment in every region and explicitly addresses scalability, reliability, and security."},
+    {"text":"The document does not present unsupported named Azure services or unprovided stakeholders as confirmed requirements","passed":true,"evidence":"It selects no named Azure services or stakeholders and labels them as unspecified/open questions."}
+  ],
+  "summary":{"passed":7,"failed":0,"total":7,"pass_rate":1.0}
+}

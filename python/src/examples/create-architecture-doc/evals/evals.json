@@ -1,0 +1,35 @@
+{
+  "skill_name": "create-architecture-doc",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create an architecture document from the attached project_description.md. Return the finished Markdown only.",
+      "expected_output": "A concise Markdown architecture document for Fart Corp's New Innovative Product, grounded in the source and following the required policy.",
+      "files": ["evals/files/project_description.md"],
+      "assertions": [
+        "The first non-empty content line contains the company name Fart Corp",
+        "The document identifies the project as New Innovative Product",
+        "The document has Overview, Architecture, and Implementation sections",
+        "The output is no longer than 100 lines",
+        "The Architecture section contains a fenced Mermaid diagram",
+        "The architecture is explicitly based on Microsoft Azure and addresses global availability, scalability, reliability, and security",
+        "The document does not present unsupported named Azure services or unprovided stakeholders as confirmed requirements"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Hey, can you turn the attached project brief into our architecture doc? Keep it concise and give me Markdown I can save directly.",
+      "expected_output": "A concise Markdown architecture document for Google's Next-Gen Search Engine, grounded in the source and following the required policy.",
+      "files": ["evals/files/project_description2.md"],
+      "assertions": [
+        "The first non-empty content line contains the company name Google",
+        "The document identifies the project as Next-Gen Search Engine",
+        "The document has Overview, Architecture, and Implementation sections",
+        "The output is no longer than 100 lines",
+        "The Architecture section contains a fenced Mermaid diagram",
+        "The architecture is explicitly based on Google Cloud Platform and addresses machine learning, distributed computing, scalability, reliability, and global availability",
+        "The document does not present unsupported named Google Cloud services or unprovided stakeholders as confirmed requirements"
+      ]
+    }
+  ]
+}

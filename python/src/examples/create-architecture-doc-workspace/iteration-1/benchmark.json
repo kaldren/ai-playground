@@ -1,0 +1,31 @@
+{
+  "skill_name":"create-architecture-doc",
+  "iteration":1,
+  "eval_count":2,
+  "with_skill":{
+    "passed_assertions":13,
+    "total_assertions":14,
+    "mean_pass_rate":0.9285714285714286,
+    "pass_rate_stddev":0.07142857142857145,
+    "mean_duration_ms":null,
+    "duration_ms_stddev":null,
+    "mean_total_tokens":null,
+    "total_tokens_stddev":null
+  },
+  "without_skill":{
+    "passed_assertions":7,
+    "total_assertions":14,
+    "mean_pass_rate":0.5,
+    "pass_rate_stddev":0.07142857142857142,
+    "mean_duration_ms":null,
+    "duration_ms_stddev":null,
+    "mean_total_tokens":null,
+    "total_tokens_stddev":null
+  },
+  "delta":{
+    "pass_rate":0.4285714285714286,
+    "duration_ms":null,
+    "total_tokens":null,
+    "cost":null
+  }
+}
