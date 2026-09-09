@@ -1,0 +1,12 @@
+interface:
+  display_name: "Microsoft Agent Framework"
+  short_description: "Build Agent Framework apps in .NET or Python"
+  default_prompt: "Use $microsoft-agent-framework to build this agent with current Microsoft guidance."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "microsoftLearn"
+      description: "Microsoft Learn documentation and code samples"
+      transport: "streamable_http"
+      url: "https://learn.microsoft.com/api/mcp"
